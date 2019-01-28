@@ -1,0 +1,28 @@
+<h2>List of teams</h2>
+<ul>
+  {{#each teams as |team|}}
+    <li>{{team}} <button {{action "filterTeam" team}}>filter</button></li>
+  {{/each}}
+</ul>
+
+{{#if activeFilter}}
+  <p>Filter: {{activeFilter}} <button {{action "clearFilter"}}>clear</button></p>
+{{else}}
+  <p>Filter: ---</p>
+{{/if}}
+
+<h2>List of people</h2>
+
+{{!-- {{#let (array
+  (hash name="Ricardo")
+  (hash name="Melanie")
+  (hash name="Jen"))
+  as |people|
+}}
+{{/let}} --}}
+
+<ul>
+  {{#each filteredPeople as |person|}}
+    <li>{{person.name}}</li>
+  {{/each}}
+</ul>
