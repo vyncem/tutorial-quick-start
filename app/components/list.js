@@ -271,6 +271,8 @@ export default Component.extend({
   activeFilter: null,
 
   filteredPeople: computed('activeFilter', 'people.[]', function() {
+    if (!this.activeFilter) { return this.people; }
+
     return this.people.filter(person => person.teams.includes(this.activeFilter));
   }),
 
