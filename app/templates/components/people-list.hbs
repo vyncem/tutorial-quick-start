@@ -1,0 +1,10 @@
+<h2>{{title}}</h2>
+
+<ul>
+  {{#each people as |person|}}
+    <li>
+      ({{person.attributes.teams}}) {{person.attributes.name}}
+      <button {{action "showPerson" person}}>Select</button>
+    </li>
+  {{/each}}
+</ul>
